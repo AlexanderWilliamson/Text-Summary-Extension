@@ -3,10 +3,8 @@ document.getElementById("button").addEventListener("click", (evt) =>{
 	if (!apikeyInput.value)
 		return;
 	
-	if (!/^aiza.+$/i.test(apikeyInput.value)){
-		console.log("failed regex test");
+	if (!/^aiza.+$/i.test(apikeyInput.value))
 		return;
-	}
 	
 	chrome.storage.local.set({"text-summarizer-api-key":apikeyInput.value});
 	apikeyInput.value = "";
