@@ -2,7 +2,7 @@
 	"manifest_version": 3,
 	"name": "Text Summarizer",
 	"description": "Uses Google Gemini's API to summarize selected text.",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"icons": {
 		"48": "icon-48.png"
 	},
