@@ -2,11 +2,11 @@
 	"manifest_version": 3,
 	"name": "Text Summarizer",
 	"description": "Summarizes selected text",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"action":{
 		"default_popup": "popup.html"
 	},
-	"permissions": ["activeTab", "scripting"],
+	"permissions": ["activeTab", "scripting", "storage"],
 	"background":{
 		"service_worker": "service-worker.js"
 	},
