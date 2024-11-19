@@ -1,7 +1,7 @@
 document.addEventListener("keyup", function(event) {
 	event.preventDefault();
 	
-	if (!(event.ctrlKey && event.altKey && event.key === 'z')) 
+	if (!((event.ctrlKey || event.metaKey) && event.altKey && event.key === 'z')) 
 		return;
 	
 	const selectedText = window.getSelection().toString();
