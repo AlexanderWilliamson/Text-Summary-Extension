@@ -1,12 +1,22 @@
-document.getElementById("button").addEventListener("click", function(){
-	chrome.runtime.sendMessage({"type": "text-getter-selected-text", "data": "button popup!"});
+const apikeyInput = document.getElementById("apikeyInput");
+document.getElementById("button").addEventListener("click", (evt) =>{
+	if (!apikeyInput.value)
+		return;
+	
+	if (!/^aiza.+$/i.test(apikeyInput.value)){
+		console.log("failed regex test");
+		return;
+	}
+	
+	chrome.storage.local.set({"text-summarizer-api-key":apikeyInput.value});
+	apikeyInput.value = "";
+	apikeyInput.placeholder = "(Optional) Update Google Gemini API key";
 });
 chrome.storage.local.get("text-summarizer-api-key", (res) => {
-	console.log(res);
-	if (res){
-		document.getElementById("apikeyInput").placeholder = "(Optional) Update OpenAI API key";
+	if (res["text-summarizer-api-key"]){
+		apikeyInput.placeholder = "(Optional) Update Google Gemini API key";
 	}
 	else{
-		document.getElementById("apikeyInput").placeholder = "Enter OpenAI API key";
+		apikeyInput.placeholder = "Enter Google Gemini API key";
 	}
 });

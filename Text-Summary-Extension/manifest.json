@@ -1,10 +1,14 @@
 {
 	"manifest_version": 3,
 	"name": "Text Summarizer",
-	"description": "Summarizes selected text",
-	"version": "0.2.0",
+	"description": "Uses Google Gemini's API to summarize selected text.",
+	"version": "1.0.0",
+	"icons": {
+		"48": "icon-48.png"
+	},
 	"action":{
-		"default_popup": "popup.html"
+		"default_popup": "popup.html",
+		"default_icon": "icon-48.png"
 	},
 	"permissions": ["activeTab", "scripting", "storage"],
 	"background":{
